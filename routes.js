@@ -21,6 +21,8 @@ module.exports = (app => {
     app.route('/ubahMhs')
         .put(myjson.ubahMhs)
 
+    app.route('/hapusMhs')
+        .delete(myjson.hapusMhs)
     
 })
 

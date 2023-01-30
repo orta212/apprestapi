@@ -50,3 +50,13 @@ exports.ubahMhs = ((req, res) => {
         else response.ok("Berhasil Mengubah Data", res)
     }))
 })
+
+//menghapus mahasiswa
+exports.hapusMhs = ((req, res) => {
+    let id = req.body.id
+    connection.query('DELETE FROM mahasiswa WHERE id_mahasiswa = ?', [id], 
+    ((error, rows, fields) => {
+        if (error) connection.log(error)
+        else response.ok("Berhasil Menghapus Data", res)
+    }))
+})
