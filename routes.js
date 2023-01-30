@@ -11,5 +11,8 @@ module.exports = (app => {
 
     app.route('/tampilById/:id')
         .get(myjson.tampilById)
+
+    app.route('/tambahMhs')
+        .post(myjson.tambahMhs)
 })
 

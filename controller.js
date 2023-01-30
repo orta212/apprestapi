@@ -21,7 +21,19 @@ exports.tampilById = ((req, res) => {
     let id = req.params.id
     connection.query('SELECT * FROM mahasiswa WHERE id_mahasiswa = ?', [id], 
     ((error, rows, fields) => {
-        if (error) connection.log(error)
+        if (error) console.log(error)
         else response.ok(rows, res)
+    }))
+})
+
+//menambah mahasiswa
+exports.tambahMhs = ((req, res) => {
+    let nama = req.body.nama
+    let nim = req.body.nim
+    let jurusan = req.body.jurusan
+    connection.query('INSERT INTO mahasiswa VALUES(?,?,?,?)', ['',nim, nama, jurusan], 
+    ((error, rows, fields) => {
+        if (error) connection.log(error)
+        else response.ok("Berhasil Menambahkan Data", res)
     }))
 })
