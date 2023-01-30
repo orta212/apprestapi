@@ -14,5 +14,13 @@ module.exports = (app => {
 
     app.route('/tambahMhs')
         .post(myjson.tambahMhs)
+
+    app.route('/ubahMhs')
+        .put(myjson.ubahMhs)
+    
+    app.route('/ubahMhs')
+        .put(myjson.ubahMhs)
+
+    
 })
 

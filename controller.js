@@ -37,3 +37,16 @@ exports.tambahMhs = ((req, res) => {
         else response.ok("Berhasil Menambahkan Data", res)
     }))
 })
+
+//mengubah mahasiswa
+exports.ubahMhs = ((req, res) => {
+    let id = req.body.id
+    let nama = req.body.nama
+    let nim = req.body.nim
+    let jurusan = req.body.jurusan
+    connection.query('UPDATE mahasiswa SET nim = ?, nama = ?, jurusan = ? WHERE id_mahasiswa = ?', [nim, nama, jurusan, id], 
+    ((error, rows, fields) => {
+        if (error) connection.log(error)
+        else response.ok("Berhasil Mengubah Data", res)
+    }))
+})
